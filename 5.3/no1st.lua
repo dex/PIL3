@@ -1,0 +1,3 @@
+function no1st_print(first, ...)
+	return ...
+end
