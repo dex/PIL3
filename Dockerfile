@@ -1,9 +1,11 @@
-FROM centos:6
+FROM ubuntu
 
 ENV lua_path=/lua
 
-RUN yum update
-RUN yum install -y lua-devel gcc
+RUN apt-get update
+RUN apt-get install -y build-essential
+RUN apt-get install -y pkg-config
+RUN apt-get install -y luajit libluajit-5.1-dev
 VOLUME ${lua_path}
 WORKDIR ${lua_path}
 CMD ["/bin/bash"]
